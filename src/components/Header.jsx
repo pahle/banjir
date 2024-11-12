@@ -8,6 +8,7 @@ import {
   PopoverPanel,
 } from '@headlessui/react'
 import clsx from 'clsx'
+import { logout } from '@/utils/auth'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
@@ -66,9 +67,11 @@ function MobileNavigation() {
         transition
         className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5 data-[closed]:scale-95 data-[closed]:opacity-0 data-[enter]:duration-150 data-[leave]:duration-100 data-[enter]:ease-out data-[leave]:ease-in"
       >
-        <MobileNavLink href="#features">A</MobileNavLink>
-        <MobileNavLink href="#testimonials">B</MobileNavLink>
-        <MobileNavLink href="#pricing">C</MobileNavLink>
+        <MobileNavLink href="#penyebab">Penyebab</MobileNavLink>
+        <MobileNavLink href="#jenis">Jenis</MobileNavLink>
+        <MobileNavLink href="#dampak">Dampak</MobileNavLink>
+        <MobileNavLink href="#pencegahan">Pencegahan</MobileNavLink>
+        <MobileNavLink href="/laporan">Laporan</MobileNavLink>
         <hr className="m-2 border-slate-300/40" />
         <MobileNavLink href="/login">Sign in</MobileNavLink>
       </PopoverPanel>
@@ -76,14 +79,14 @@ function MobileNavigation() {
   )
 }
 
-export function Header() {
+export function Header(props) {
   return (
     <header className="py-10">
       <Container>
         <nav className="relative z-50 flex justify-between">
           <div className="flex items-center md:gap-x-12">
             <Link
-              href="#"
+              href="/"
               aria-label="Home"
               className="flex items-center gap-2"
             >
@@ -93,20 +96,28 @@ export function Header() {
               </h2>
             </Link>
             <div className="hidden md:flex md:gap-x-6">
-              <NavLink href="#features">A</NavLink>
-              <NavLink href="#testimonials">B</NavLink>
-              <NavLink href="#pricing">C</NavLink>
+              <NavLink href="/#penyebab">Penyebab</NavLink>
+              <NavLink href="/#jenis">Jenis</NavLink>
+              <NavLink href="/#dampak">Dampak</NavLink>
+              <NavLink href="/#pencegahan">Pencegahan</NavLink>
+              <NavLink href="/laporan">Laporan</NavLink>
             </div>
           </div>
           <div className="flex items-center gap-x-5 md:gap-x-8">
             <div className="hidden md:block">
-              <NavLink href="/login">Sign in</NavLink>
+              {props.isLogin ? (
+                <Button onClick={() => logout()} color="blue">
+                  Sign out
+                </Button>
+              ) : (
+                <NavLink href="/login">Sign in</NavLink>
+              )}
             </div>
-            <Button href="/register" color="blue">
+            {/* <Button href="/register" color="blue">
               <span>
                 Get started <span className="hidden lg:inline">today</span>
               </span>
-            </Button>
+            </Button> */}
             <div className="-mr-1 md:hidden">
               <MobileNavigation />
             </div>

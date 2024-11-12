@@ -7,11 +7,14 @@ import { Pencegahan } from '@/components/Pencegahan'
 import { Penyebab } from '@/components/Penyebab'
 import { Jenis } from '@/components/Jenis'
 import { Testimonials } from '@/components/Testimonials'
+import { cookies } from 'next/headers'
 
 export default function Home() {
+  const cookiesStore = cookies()
+  const isLogin = cookiesStore.get('session') ? true : false
   return (
     <>
-      <Header />
+      <Header isLogin={isLogin} />
       <main>
         <Hero />
         <Penyebab /> {/* Penyebab */}

@@ -21,26 +21,6 @@ const features = [
     summary: 'Banjir Luapan Sungai',
     description: 'Terjadi ketika debit sungai meluap melewati batas normalnya.',
     image: screenshotRiver,
-    icon: function InventoryIcon() {
-      return (
-        <>
-          <path
-            opacity=".5"
-            d="M8 17a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
-            fill="#fff"
-          />
-          <path
-            opacity=".3"
-            d="M8 24a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
-            fill="#fff"
-          />
-          <path
-            d="M8 10a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
-            fill="#fff"
-          />
-        </>
-      )
-    },
   },
   {
     id: 2,
@@ -49,26 +29,6 @@ const features = [
     description:
       'Disebabkan oleh naiknya permukaan laut, sering kali akibat badai, gelombang pasang, atau kerusakan ekosistem pesisir.',
     image: screenshotSea,
-    icon: function InventoryIcon() {
-      return (
-        <>
-          <path
-            opacity=".5"
-            d="M8 17a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
-            fill="#fff"
-          />
-          <path
-            opacity=".3"
-            d="M8 24a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
-            fill="#fff"
-          />
-          <path
-            d="M8 10a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
-            fill="#fff"
-          />
-        </>
-      )
-    },
   },
   {
     id: 3,
@@ -77,26 +37,6 @@ const features = [
     description:
       'Terjadi ketika air menggenangi daratan rendah akibat hujan lebat.',
     image: screenshotPuddle,
-    icon: function InventoryIcon() {
-      return (
-        <>
-          <path
-            opacity=".5"
-            d="M8 17a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
-            fill="#fff"
-          />
-          <path
-            opacity=".3"
-            d="M8 24a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
-            fill="#fff"
-          />
-          <path
-            d="M8 10a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
-            fill="#fff"
-          />
-        </>
-      )
-    },
   },
   {
     id: 4,
@@ -105,26 +45,6 @@ const features = [
     description:
       'Banjir yang sangat kuat dan mendadak, seringkali disertai longsor, yang merusak segalanya di jalur alirnya.',
     image: screenshotFlood,
-    icon: function InventoryIcon() {
-      return (
-        <>
-          <path
-            opacity=".5"
-            d="M8 17a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
-            fill="#fff"
-          />
-          <path
-            opacity=".3"
-            d="M8 24a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
-            fill="#fff"
-          />
-          <path
-            d="M8 10a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
-            fill="#fff"
-          />
-        </>
-      )
-    },
   },
 ]
 
@@ -238,8 +158,7 @@ function FeaturesDesktop() {
 export function Jenis() {
   return (
     <section
-      id="secondary-features"
-      aria-label="Features for simplifying everyday business tasks"
+      id="jenis"
       className="pb-14 pt-20 sm:pb-20 sm:pt-32 lg:pb-32"
     >
       <Container>

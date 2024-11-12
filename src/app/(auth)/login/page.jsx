@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { login } from '@/utils/auth'
 
 import { Button } from '@/components/Button'
 import { TextField } from '@/components/Fields'
@@ -30,7 +31,7 @@ export default function Login() {
         </Link>{' '}
         for a free trial.
       </p>
-      <form action="#" className="mt-10 grid grid-cols-1 gap-y-8">
+      <form action={login} className="mt-10 grid grid-cols-1 gap-y-8">
         <TextField
           label="Email address"
           name="email"

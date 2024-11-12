@@ -94,8 +94,7 @@ function Plan({ name, price, description, href, features, featured = false }) {
 export function Pencegahan() {
   return (
     <section
-      id="pricing"
-      aria-label="Pricing"
+      id="pencegahan"
       className="bg-slate-900 py-20 sm:py-32"
     >
       <Container>

@@ -1,41 +1,32 @@
-import Link from 'next/link'
-import { register } from '@/utils/auth'
-
+import React from 'react'
 import { Button } from '@/components/Button'
 import { SelectField, TextField } from '@/components/Fields'
-import { Logo } from '@/components/Logo'
-import { SlimLayout } from '@/components/SlimLayout'
+import { createReport } from '@/utils/query'
 
-export const metadata = {
-  title: 'Sign Up',
-}
-
-export default function Register() {
+const page = () => {
   return (
-    <SlimLayout>
-      <div className="flex">
-        <Link href="/" aria-label="Home">
-          <Logo className="h-10 w-auto" />
-        </Link>
+    <>
+      <div className="sm:flex sm:items-center">
+        <div className="sm:flex-auto">
+          <h1 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
+            Tambah Laporan
+          </h1>
+          <p className="mt-2 text-sm text-gray-700">
+            A list of all the users in your account including their name, title,
+            email and role.
+          </p>
+        </div>
+        <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
+          <Button href="/laporan" color="slate">
+            Batal
+          </Button>
+        </div>
       </div>
-      <h2 className="mt-20 text-lg font-semibold text-gray-900">
-        Get started for free
-      </h2>
-      <p className="mt-2 text-sm text-gray-700">
-        Already registered?{' '}
-        <Link
-          href="/login"
-          className="font-medium text-blue-600 hover:underline"
-        >
-          Sign in
-        </Link>{' '}
-        to your account.
-      </p>
       <form
-        action={register}
+        action={createReport}
         className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2"
       >
-        <TextField
+        {/* <TextField
           label="First name"
           name="first_name"
           type="text"
@@ -48,21 +39,19 @@ export default function Register() {
           type="text"
           autoComplete="family-name"
           required
-        />
+        /> */}
         <TextField
           className="col-span-full"
-          label="Email address"
-          name="email"
-          type="email"
-          autoComplete="email"
+          label="Title"
+          name="title"
+          type="text"
           required
         />
         <TextField
           className="col-span-full"
-          label="Password"
-          name="password"
-          type="password"
-          autoComplete="new-password"
+          label="Content"
+          name="content"
+          type="text"
           required
         />
         {/* <SelectField
@@ -78,11 +67,13 @@ export default function Register() {
         <div className="col-span-full">
           <Button type="submit" variant="solid" color="blue" className="w-full">
             <span>
-              Sign up <span aria-hidden="true">&rarr;</span>
+              Submit <span aria-hidden="true">&rarr;</span>
             </span>
           </Button>
         </div>
       </form>
-    </SlimLayout>
+    </>
   )
 }
+
+export default page
