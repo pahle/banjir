@@ -4,8 +4,6 @@ import { SelectField, TextField } from '@/components/Fields'
 import { createReport, editReport } from '@/utils/query'
 
 const page = (params) => {
-
-
   return (
     <>
       <div className="sm:flex sm:items-center">

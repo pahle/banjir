@@ -14,7 +14,7 @@ export async function login(formData) {
       },
     })
     if (!query) {
-      throw new Error('Invalid username or password')
+      throw new Error('Invalid email or password')
     }
     await createSession(query)
   } catch (error) {

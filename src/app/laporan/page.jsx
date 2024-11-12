@@ -4,6 +4,7 @@ import DeleteButton from './DeleteButton'
 
 async function Tables() {
   const reports = await getReports()
+  console.log(reports)
   return (
     <>
       <div className="sm:flex sm:items-center">

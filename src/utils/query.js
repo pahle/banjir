@@ -7,9 +7,9 @@ import { redirect } from 'next/navigation'
 export const getReports = async () => {
   try {
     const query = await prisma.report.findMany({
-        include: {
-            author: true
-        }
+      include: {
+        author: true,
+      },
     })
     return query
   } catch (error) {
@@ -20,14 +20,13 @@ export const getReports = async () => {
 }
 
 export const createReport = async (formData) => {
-  const data = {
-    title: formData.get('title'),
-    content: formData.get('content'),
-    authorId: cookies().get('userId').value,
-  }
   try {
     const queryCreate = await prisma.report.create({
-      data: data,
+      data: {
+        title: formData.get('title'),
+        content: formData.get('content'),
+        authorId: cookies().get('userId').value,
+      },
     })
     return queryCreate
   } catch (error) {
@@ -44,8 +43,6 @@ export const editReport = async (formData) => {
     title: formData.get('title'),
     content: formData.get('content'),
   }
-  console.log(data.id)
-  
   try {
     const query = await prisma.report.update({
       where: {
@@ -67,7 +64,6 @@ export const editReport = async (formData) => {
 }
 
 export const deleteReport = async (id) => {
-  console.log(id)
   try {
     await prisma.report.delete({
       where: {

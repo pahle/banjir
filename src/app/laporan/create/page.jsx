@@ -26,20 +26,6 @@ const page = () => {
         action={createReport}
         className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2"
       >
-        {/* <TextField
-          label="First name"
-          name="first_name"
-          type="text"
-          autoComplete="given-name"
-          required
-        />
-        <TextField
-          label="Last name"
-          name="last_name"
-          type="text"
-          autoComplete="family-name"
-          required
-        /> */}
         <TextField
           className="col-span-full"
           label="Title"
@@ -54,16 +40,6 @@ const page = () => {
           type="text"
           required
         />
-        {/* <SelectField
-          className="col-span-full"
-          label="How did you hear about us?"
-          name="referral_source"
-        >
-          <option>AltaVista search</option>
-          <option>Super Bowl commercial</option>
-          <option>Our route 34 city bus ad</option>
-          <option>The “Never Use This” podcast</option>
-        </SelectField> */}
         <div className="col-span-full">
           <Button type="submit" variant="solid" color="blue" className="w-full">
             <span>

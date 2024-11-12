@@ -4,10 +4,10 @@ import React from "react";
 import { deleteReport } from "@/utils/query";
 import { useRouter } from "next/navigation";
 
-const DeleteButton = (id) => {
+const DeleteButton = ({id}) => {
   const router = useRouter();
   const handleDelete = async () => {
-    await deleteReport(id.id);
+    await deleteReport(id);
     router.refresh();
   };
   return (
